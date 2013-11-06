@@ -13,12 +13,33 @@ var QUIZ_TOPICS = ['javascript', 'jasmine', 'testing'];
 //  [3, 6, 9, 12] => 3
 //  [9, 20, 11, 12] => 8
 
-// return the average of the 2 or 3 numbers in the middle of the array
-// (2 if the array has an even number of elements)
-// (3 if the array has an odd number of elements).
-// averageMedian(array)
-//  [2, 6, 9, 11] => 7.5
-//  [9, 8, 2, 4, 7] => 4.67
+// var largestNumber = function (array) {
+//   return Math.max.apply( Math, array );
+// };
+
+
+var bigDiff = function (array) {
+	var sortedArray = array.sort(function(a,b) {return b-a});
+	return(sortedArray[0] - sortedArray[1]); 
+};
+
+// // return the average of the 2 or 3 numbers in the middle of the array
+// // (2 if the array has an even number of elements)
+// // (3 if the array has an odd number of elements).
+// // averageMedian(array)
+// //  [2, 6, 9, 11] => 7.5
+// //  [9, 8, 2, 4, 7] => 6.33
+var averageMedian = function (array) {
+	var arraySort = array.sort(function(a,b) {return a-b});
+	if ((arraySort.length % 2) !== 0) {
+		var med = arraySort[(arraySort.length - 1)/2];
+		var before = arraySort[((arraySort.length - 1)/2)+1];
+		var after = arraySort[((arraySort.length - 1)/2)-1];
+		return (med + before +after)/3;
+	} else {
+		return (arraySort[(arraySort.length/2)] + arraySort[(arraySort.length/2)-1])/2;
+	};
+};	
 
 // return true if you can split the array into parts
 // where the sum of one portion equals the sum of the other portion.
