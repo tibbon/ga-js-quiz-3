@@ -32,11 +32,21 @@ describe('averageMedian', function() {
   });
 });
 
+describe('canBalance', function() {
+  it('should return the average of the 2 or 3 numbers in the middle of the array', function() {
+    expect(canBalance([1, 2, 1, 1, 1])).toBe(true);
+    expect(canBalance([2, 1, 1, 2, 1])).toBe(false);
+    expect(canBalance([3, 4, 1, 2, 3, 1])).toBe(true);
+  });
+});
 
 
-
-
-
+describe('countClumps', function() {
+  it('should return the number of times 2 or more of the same number appear sequentially.', function() {
+    expect(countClumps([2, 1, 1, 1, 1, 3, 3, 3, 1])).toBe(2);
+    expect(countClumps([9, 3, 3, 4, 4, 4, 6, 7, 7, 7])).toBe(3);
+  });
+});
 
 
 

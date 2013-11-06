@@ -16,6 +16,11 @@ var compareNumbers = function(a, b) {
     return a - b;
   };
 
+var sumArray = function(array) {
+    var sum = array.reduce(function(pv, cv) { return pv + cv; }, 0);
+    return sum;
+  };
+
 var bigDiff = function(array) {
   var sorted = array.sort(compareNumbers);
   return sorted[sorted.length - 1] - sorted[sorted.length -2];
@@ -31,10 +36,11 @@ var bigDiff = function(array) {
 var averageMedian = function(array) {
   var sorted = array.sort(compareNumbers);
   var length = sorted.length;
+  var middle = length / 2;
   if(length % 2 === 0) {
-    return (sorted[(length / 2)] + sorted[(length / 2) - 1]) / 2;
+    return (sorted[middle] + sorted[middle - 1]) / 2;
   } else {
-    return ((sorted[(length / 2) - 1.5] + sorted[(length / 2) - .5] + sorted[(length / 2) + .5]) / 3); 
+    return ((sorted[middle - 1.5] + sorted[middle - .5] + sorted[middle + .5]) / 3); 
   }
 };
 
@@ -45,26 +51,47 @@ var averageMedian = function(array) {
 //  [2, 1, 1, 2, 1] => false
 //  [3, 4, 1, 2, 3, 1] => true
 
-var averageMedian = function(array) {
-  var sorted = array.sort(compareNumbers);
-  var length = sorted.length;
+var canBalance = function(array) {
+  var length = array.length;
+  var middle = length / 2;
+
   if(length % 2 === 0) {
-    return (sorted[(length / 2)] + sorted[(length / 2) - 1]) / 2;
+    var first_half = array.slice(0, middle - 1);
+    var second_half = array.slice(middle - 1);
+    var first_half_sum = sumArray(first_half);
+    var second_half_sum = sumArray(second_half);
+    return first_half_sum === second_half_sum;
   } else {
-    return ((sorted[(length / 2) - 1.5] + sorted[(length / 2) - .5] + sorted[(length / 2) + .5]) / 3); 
+    var first_half = array.slice(0, middle - .5);
+    var second_half = array.slice(middle - .5);
+    var first_half_sum = sumArray(first_half);
+    var second_half_sum = sumArray(second_half);
+    return first_half_sum === second_half_sum;
   }
 };
-
-
 
 // Returns the number of times 2 or more of the same number appear sequentially.
 // countClumps(array)
 //  [2, 1, 1, 1, 1, 3, 3, 3, 1] => 2
 //  [9, 3, 3, 4, 4, 4, 6, 7, 7, 7] => 3
 
+var countClumps = function(array) {
+  var results = [];
+  for (var i = 0; i < array.length; i++) {
+    if (array[i+1] === array[i]){
+        results.push(i);
+        if (array[i+1] ==! array[i+2]) { 
+          results.push(i+1);
+        }else{
+          results.push(i+1); 
+        }
+            i++;
+    }
+  };
+  debugger;
+  console.log(results);
 
-
-
+};
 
 
 
