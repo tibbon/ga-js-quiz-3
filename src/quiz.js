@@ -12,6 +12,15 @@ var QUIZ_TOPICS = ['javascript', 'jasmine', 'testing'];
 // bigDiff(array)
 //  [3, 6, 9, 12] => 3
 //  [9, 20, 11, 12] => 8
+var bigDiff = function(array) {
+  function compareNumbers(a, b) {
+    return a - b;
+  };
+
+  var sorted = array.sort(compareNumbers);
+  return sorted[sorted.length - 1] - sorted[sorted.length -2];
+};
+
 
 // return the average of the 2 or 3 numbers in the middle of the array
 // (2 if the array has an even number of elements)

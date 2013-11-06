@@ -17,3 +17,10 @@ describe('a quiz', function() {
   });
 
 });
+
+describe('bigDiff', function() {
+  it('should find the largest number and second largest number in an array and then subtract the difference', function() {
+    expect(bigDiff([3, 6, 9, 12])).toBe(3);
+    expect(bigDiff([9, 20, 11, 12])).toBe(8);
+  });
+});
