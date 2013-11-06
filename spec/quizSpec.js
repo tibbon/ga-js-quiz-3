@@ -30,17 +30,19 @@ describe('bigDiff(array)', function() {
 describe('averageMedian(array)', function() {
 
   it('find the average of the center numbers in an array', function() {
-    expect(AVERAGE_MEDIAN([2, 6, 9, 11])).toEqual(7.5);
-    expect(AVERAGE_MEDIAN([9, 8, 2, 4, 7])).toEqual(4.67);
+    expect(AVERAGE_MEDIAN([1, 2, 1, 1, 1])).toBe(true);
+    expect(AVERAGE_MEDIAN([2, 1, 1, 2, 1])).toBe(false);
+    expect(AVERAGE_MEDIAN([3, 4, 1, 2, 3, 1])).toBe(true);
+
   });
 
 });
 
-// describe('(array)', function() {
+// describe('canBalance(array)', function() {
 
 //   it('find the difference between the two largest numbers in an array', function() {
-//     expect(BIG_DIFF([3, 6, 9, 12])).toEqual(3);
-//     expect(BIG_DIFF([9, 20, 11, 12])).toEqual(8);
+//     expect(CAN_BALANCE([3, 6, 9, 12])).toEqual(3);
+//     expect(CAN_BALANCE([9, 20, 11, 12])).toEqual(8);
 //   });
 
 // });
