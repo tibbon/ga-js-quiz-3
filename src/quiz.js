@@ -30,7 +30,12 @@ numbers.sort(function(a,b) {
 	var bigDiff = last_element - second_last
 	console.log(bigDiff)
 
+	// RAHUL's SOLUTION
 
+	// var bigDiff = function(array) {
+	//   array.sort(function(a,b){return b-a});
+	//   return array[0] - array[1];
+	// };
 
 
 // return the average of the 2 or 3 numbers in the middle of the array
