@@ -53,7 +53,7 @@ var averageMedian = function(array) {
 
 var canBalance = function(array) {
   var length = array.length;
-  var middle = length / 2;
+  var index = length / 2;
 
   if(length % 2 === 0) {
     var first_half = array.slice(0, middle - 1);
@@ -75,24 +75,20 @@ var canBalance = function(array) {
 //  [2, 1, 1, 1, 1, 3, 3, 3, 1] => 2
 //  [9, 3, 3, 4, 4, 4, 6, 7, 7, 7] => 3
 
+var onlyUnique = function(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
 var countClumps = function(array) {
-  var results = [];
-  for (var i = 0; i < array.length; i++) {
-    if (array[i+1] === array[i]){
-        results.push(i);
-        if (array[i+1] ==! array[i+2]) { 
-          results.push(i+1);
-        }else{
-          results.push(i+1); 
-        }
-            i++;
-    }
-  };
-  debugger;
-  console.log(results);
-
+  var i = 0, diff, result = [];
+  for (; i < array.length - 1; i++ ) {
+  diff = array[i] - array[i+1];
+  if (Math.abs(diff) === 0) {
+  result.push(array[i]);
+  }        
+  }
+  return result.filter(onlyUnique).length;
 };
-
 
 
 
