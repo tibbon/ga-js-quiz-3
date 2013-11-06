@@ -7,18 +7,39 @@
 
 var QUIZ_TOPICS = ['javascript', 'jasmine', 'testing'];
 
-// Find the largest number and second largest number
-// Then subtract the difference.
-// bigDiff(array)
-//  [3, 6, 9, 12] => 3
-//  [9, 20, 11, 12] => 8
+var bigDiff = function(array) {
+	var sorted = array.sort(function(a,b){
+		return b-a;
+	});
+	var largest = sorted[0];
+	var second_largest = sorted[1];
+	return largest - second_largest;
+};
 
-// return the average of the 2 or 3 numbers in the middle of the array
-// (2 if the array has an even number of elements)
-// (3 if the array has an odd number of elements).
-// averageMedian(array)
-//  [2, 6, 9, 11] => 7.5
-//  [9, 8, 2, 4, 7] => 4.67
+var averageMedian = function(array) {
+	if (array.length % 2 === 1) {
+		var base = Math.ceil(array.length / 2);
+		return (array[base] + array[base - 1] + array[base - 2]) / 3;
+	} else {
+		var base = Math.ceil(array.length / 2);
+		return (array[base] + array[base - 1]) / 2;
+	};
+};
+
+var onlyUnique = function(value, index, self) {
+  return self.indexOf(value) === index;
+}
+
+var countClumps = function(array) {
+  var i = 0, diff, result = [];
+  for (; i < array.length - 1; i++ ) {
+  	diff = array[i] - array[i+1];
+  	if (Math.abs(diff) === 0) {
+  		result.push(array[i]);
+  	}        
+  }
+  return result.filter(onlyUnique).length;
+};
 
 // return true if you can split the array into parts
 // where the sum of one portion equals the sum of the other portion.
@@ -27,7 +48,33 @@ var QUIZ_TOPICS = ['javascript', 'jasmine', 'testing'];
 //  [2, 1, 1, 2, 1] => false
 //  [3, 4, 1, 2, 3, 1] => true
 
-// Returns the number of times 2 or more of the same number appear sequentially.
-// countClumps(array)
-//  [2, 1, 1, 1, 1, 3, 3, 3, 1] => 2
-//  [9, 3, 3, 4, 4, 4, 6, 7, 7, 7] => 3
+var canBalance = function(array) {
+	var i = 1, first, bool = [], answer;
+	for (; i < array.length; i++) {
+		new_array = array.slice(0);
+		first = new_array.splice(0, i);
+		var first_value = first.reduce(function (accum, value, index, array) {
+  		return accum + value;
+		});
+		var second_value = new_array.reduce(function (accum, value, index, array) {
+  		return accum + value;
+  	});
+  	if (first_value === second_value){
+  		answer = true;
+  		break;
+  	} else {
+  		answer = false;
+  	};
+	};
+	return answer;
+};
+
+
+
+
+
+
+
+
+
+
