@@ -24,3 +24,20 @@ describe('bigDiff', function() {
     expect(bigDiff([9, 20, 11, 12])).toBe(8);
   });
 });
+
+describe('averageMedian', function() {
+  it('should return the average of the 2 or 3 numbers in the middle of the array', function() {
+    expect(averageMedian([2, 6, 9, 11])).toBe(7.5);
+    expect(averageMedian([9, 8, 2, 4, 7])).toBe(19/3);
+  });
+});
+
+
+
+
+
+
+
+
+
+

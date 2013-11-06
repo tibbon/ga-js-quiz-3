@@ -12,11 +12,11 @@ var QUIZ_TOPICS = ['javascript', 'jasmine', 'testing'];
 // bigDiff(array)
 //  [3, 6, 9, 12] => 3
 //  [9, 20, 11, 12] => 8
-var bigDiff = function(array) {
-  function compareNumbers(a, b) {
+var compareNumbers = function(a, b) {
     return a - b;
   };
 
+var bigDiff = function(array) {
   var sorted = array.sort(compareNumbers);
   return sorted[sorted.length - 1] - sorted[sorted.length -2];
 };
@@ -26,8 +26,17 @@ var bigDiff = function(array) {
 // (2 if the array has an even number of elements)
 // (3 if the array has an odd number of elements).
 // averageMedian(array)
-//  [2, 6, 9, 11] => 7.5
-//  [9, 8, 2, 4, 7] => 4.67
+//  
+
+var averageMedian = function(array) {
+  var sorted = array.sort(compareNumbers);
+  var length = sorted.length;
+  if(length % 2 === 0) {
+    return (sorted[(length / 2)] + sorted[(length / 2) - 1]) / 2;
+  } else {
+    return ((sorted[(length / 2) - 1.5] + sorted[(length / 2) - .5] + sorted[(length / 2) + .5]) / 3); 
+  }
+};
 
 // return true if you can split the array into parts
 // where the sum of one portion equals the sum of the other portion.
@@ -36,7 +45,30 @@ var bigDiff = function(array) {
 //  [2, 1, 1, 2, 1] => false
 //  [3, 4, 1, 2, 3, 1] => true
 
+var averageMedian = function(array) {
+  var sorted = array.sort(compareNumbers);
+  var length = sorted.length;
+  if(length % 2 === 0) {
+    return (sorted[(length / 2)] + sorted[(length / 2) - 1]) / 2;
+  } else {
+    return ((sorted[(length / 2) - 1.5] + sorted[(length / 2) - .5] + sorted[(length / 2) + .5]) / 3); 
+  }
+};
+
+
+
 // Returns the number of times 2 or more of the same number appear sequentially.
 // countClumps(array)
 //  [2, 1, 1, 1, 1, 3, 3, 3, 1] => 2
 //  [9, 3, 3, 4, 4, 4, 6, 7, 7, 7] => 3
+
+
+
+
+
+
+
+
+
+
+
