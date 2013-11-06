@@ -7,6 +7,32 @@
 
 var QUIZ_TOPICS = ['javascript', 'jasmine', 'testing'];
 
+var bigDiff = function(array) {
+	var maxVal = Math.max.apply( Math, array );
+	var maxVal2 = array[0];
+	$(array).each(function(index, number) {
+		if (number > maxVal2 && number < maxVal) {
+			maxVal2 = number;
+		}
+	});
+	return maxVal - maxVal2;
+};
+
+var averageMedian = function(array) {
+	if (array.length % 2 == 0) {
+		var index2 = array.length / 2,
+		index1 = index2 - 1;
+		return (array[index1] + array[index2]) / 2;
+	}	else {
+		var index1 = Math.round(array.length / 2),
+		index2 = index1 - 1
+		index3 = index1 - 2
+		return (array[index1] + array[index2] + array[index3]) / 3;
+	};
+};
+
+
+
 // Find the largest number and second largest number
 // Then subtract the difference.
 // bigDiff(array)
@@ -31,3 +57,10 @@ var QUIZ_TOPICS = ['javascript', 'jasmine', 'testing'];
 // countClumps(array)
 //  [2, 1, 1, 1, 1, 3, 3, 3, 1] => 2
 //  [9, 3, 3, 4, 4, 4, 6, 7, 7, 7] => 3
+
+
+
+
+
+
+
