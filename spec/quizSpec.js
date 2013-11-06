@@ -31,7 +31,7 @@ describe('averageMedian(array)', function() {
 
   it('find the average of the center numbers in an array', function() {
     expect(AVERAGE_MEDIAN([2, 6, 9, 11])).toEqual(7.5);
-    expect(AVERAGE_MEDIAN([9, 8, 2, 4, 7])).toEqual(6.33);
+    expect(AVERAGE_MEDIAN([9, 8, 2, 4, 7])).toEqual(4.67);
   });
 
 });

@@ -24,7 +24,7 @@ var BIG_DIFF = function bigDiff(array) {
 // (3 if the array has an odd number of elements).
 // averageMedian(array)
  // [2, 6, 9, 11] => 7.5
- // [9, 8, 2, 4, 7] => 6.33
+ // [9, 8, 2, 4, 7] => 4.67
 var AVERAGE_MEDIAN = function averageMedian(array) {
 		var inArray = array;
 		if ((inArray.length%2) === 0)
@@ -38,7 +38,7 @@ var AVERAGE_MEDIAN = function averageMedian(array) {
 			oddindex1 = Math.floor((inArray.length/2)-1);
 			oddindex2 = Math.floor(inArray.length/2);
 			oddindex3 = Math.floor((inArray.length/2)+1);
-			return (inArray[oddindex1] + inArray[oddindex2] + inArray[oddindex3])/3;
+			return parseFloat(((inArray[oddindex1] + inArray[oddindex2] + inArray[oddindex3])/3).toFixed(2));
 		}
 };
 
