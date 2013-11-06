@@ -10,8 +10,28 @@ var QUIZ_TOPICS = ['javascript', 'jasmine', 'testing'];
 // Find the largest number and second largest number
 // Then subtract the difference.
 // bigDiff(array)
-//  [3, 6, 9, 12] => 3
-//  [9, 20, 11, 12] => 8
+var numbers = [1, 5, 2, 8, 6, 12];
+// for (var i; i < array.length; i ++){
+// 	if (array[i] > largest){
+// 		second = largest
+// 		largest = array[i]
+// 	}
+// 	var bigDiff = (largest - second)
+// 	return bigDiff
+
+var sort = function compareNumbers(a,b) {
+	return a - b;
+}
+numbers.sort(function(a,b) {
+	return a - b;
+});
+	var last_element = numbers[numbers.length - 1];
+	var second_last = numbers[numbers.length - 2];
+	var bigDiff = last_element - second_last
+	console.log(bigDiff)
+
+
+
 
 // return the average of the 2 or 3 numbers in the middle of the array
 // (2 if the array has an even number of elements)
@@ -19,6 +39,10 @@ var QUIZ_TOPICS = ['javascript', 'jasmine', 'testing'];
 // averageMedian(array)
 //  [2, 6, 9, 11] => 7.5
 //  [9, 8, 2, 4, 7] => 4.67
+
+// var averageMedian = function() {
+// 	for 
+// }
 
 // return true if you can split the array into parts
 // where the sum of one portion equals the sum of the other portion.
