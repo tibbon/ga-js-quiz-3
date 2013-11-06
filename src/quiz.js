@@ -47,6 +47,10 @@ var averageMedian = function (array) {
 //  [1, 2, 1, 1, 1] => true
 //  [2, 1, 1, 2, 1] => false
 //  [3, 4, 1, 2, 3, 1] => true
+var canBalance = function () {
+	
+
+};
 
 // Returns the number of times 2 or more of the same number appear sequentially.
 // countClumps(array)

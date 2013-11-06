@@ -50,6 +50,22 @@ describe('question2', function(){
 		});
 });
 
+describe('question3', function () {
+	it("should return true if you can split an odd array into parts where the sum of one potion equals the sum of the other",
+		function () {
+		expect(canBalance([1, 2, 1, 1, 1])).toBe(true);
+	});
+
+	it("should return false if you can't split an odd array into parts where the sum of one potion equals the sum of the other",
+		function () {
+		expect(canBalance([2, 1, 1, 2, 1])).toBe(false);
+	});
+
+	it("should return true if you can split an even array into parts where the sum of one potion equals the sum of the other",
+		function () {
+		expect(canBalance([3, 4, 1, 2, 3, 1])).toBe(true);
+	});
+});
 
 
 
