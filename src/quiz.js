@@ -7,70 +7,70 @@
 
 var QUIZ_TOPICS = ['javascript', 'jasmine', 'testing'];
 
-// Find the largest number and second largest number
-// Then subtract the difference.
+// var bigDiff = function(array) {
+//         var sorted = array.sort(function(a,b){
+//                 return b-a;
+//         });
+//         var largest = sorted[0];
+//         var second_largest = sorted[1];
+//         return largest - second_largest;
+// };
+
 var bigDiff = function(array) {
-    var max = Math.max.apply( Math, array ),
-    min = Math.min.apply( Math, array );
-    return max - min;
+  array.sort(function(a,b){return b-a});
+  return array[0] - array[1];
 };
-//  [3, 6, 9, 12] => 3
-//  [9, 20, 11, 12] => 8
 
-// return the average of the 2 or 3 numbers in the middle of the array
-// (2 if the array has an even number of elements)
-// (3 if the array has an odd number of elements).
+
 var averageMedian = function(array) {
-	  // var max = Math.max.apply( Math, array ),
-   //  min = Math.min.apply( Math, array );
+        if (array.length % 2 === 1) {
+                var base = Math.ceil(array.length / 2);
+                return (array[base] + array[base - 1] + array[base - 2]) / 3;
+        } else {
+                var base = Math.ceil(array.length / 2);
+                return (array[base] + array[base - 1]) / 2;
+        };
+};
 
-    var array = array.sort(),
-    min = array[array[0]],
-    max = array[array[array.length-1]];
-
-		// var max_index = array.indexOf(max);
-  //   var new_array = array.splice(max_index, 1);
-		// var min_index = array.indexOf(min);
-  //   new_array = array.splice(max_index, 1);
-  //   new_array = new_array.sort();
-    new_array = array.splice(array.length-1), 1;
-    new_array = array.splice(0, 1);
-}    
-
-    if (new_array.length % 2 === 0) {
-    	var index = new_array/2;
-    	 return (new_array[index] + new_array[index-1])/2;
-    }else {
-    	 var index = new_array/2;
-    	 index = Math.ceil(index * 10) / 10;
-    	 return (new_array[index] + new_array[index-1] + new_array[index-2])/3;
-    }
+var onlyUnique = function(value, index, self) {
+  return self.indexOf(value) === index;
 }
 
-//  [2, 6, 9, 11] => 7.5
-//  [9, 8, 2, 4, 7] => 6.33
+var countClumps = function(array) {
+  var i = 0, diff, result = [];
+  for (; i < array.length - 1; i++ ) {
+          diff = array[i] - array[i+1];
+          if (Math.abs(diff) === 0) {
+                  result.push(array[i]);
+          }        
+  }
+  return result.filter(onlyUnique).length;
+};
 
 // return true if you can split the array into parts
 // where the sum of one portion equals the sum of the other portion.
-var canBalance = function(a) {
-	var total = 0;
-	for(var i = 0; i < a.length; i++){
- 		total += a[i];
-	};
-	length = a.length;
-	if (total%length===0 && total%2 ===0){
-		return true;
-	}else{
-		return false;
-	}
-};
+// canBalance(array)
 //  [1, 2, 1, 1, 1] => true
 //  [2, 1, 1, 2, 1] => false
 //  [3, 4, 1, 2, 3, 1] => true
 
-
-
-// Returns the number of times 2 or more of the same number appear sequentially.
-// countClumps(array)
-//  [2, 1, 1, 1, 1, 3, 3, 3, 1] => 2
-//  [9, 3, 3, 4, 4, 4, 6, 7, 7, 7] => 3
+var canBalance = function(array) {
+        var i = 1, first, bool = [], answer;
+        for (; i < array.length; i++) {
+                new_array = array.slice(0);
+                first = new_array.splice(0, i);
+                var first_value = first.reduce(function (accum, value, index, array) {
+                  return accum + value;
+                });
+                var second_value = new_array.reduce(function (accum, value, index, array) {
+                  return accum + value;
+          });
+          if (first_value === second_value){
+                  answer = true;
+                  break;
+          } else {
+                  answer = false;
+          };
+        };
+        return answer;
+};
