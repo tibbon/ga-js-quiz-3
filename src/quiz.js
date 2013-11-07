@@ -45,7 +45,6 @@ var canBalance = function(array) {
 
   while(length > 0) {
     other_array.push(array.shift());
-    debugger;
     if (sum(other_array) === sum(array)) {
       return true;
     }
@@ -58,8 +57,10 @@ var sum = function(array) {
   if (array.length === 0)
     return 0;
   var total = 0, i = 0;
-  for(; i < array.length; i++)
+  for(; i < array.length;) {
     total += array[i];
+    i += 1;
+  }
   return total;
 };
 // Returns the number of times 2 or more of the same number appear sequentially.
@@ -67,15 +68,17 @@ var sum = function(array) {
 //  [2, 1, 1, 1, 1, 3, 3, 3, 1] => 2
 //  [9, 3, 3, 4, 4, 4, 6, 7, 7, 7] => 3
 
-var countClumps(array) {
-  array.sort();
+var countClumps = function(array) {
+  var other_array = [], clumps = 0, i = 0,
+      length = array.length;
 
-  var clumps = 0,
-      i = 0,
-      length = array.length - 1;
-  for (var i = 0; i < arr.length - 1; i++) {
-    if (sorted_arr[i + 1] == sorted_arr[i]) {
-        results.push(sorted_arr[i]);
+  array.sort(function(a,b){return a-b});
+  while (i < length ) {
+    if (array[i] === array[i+1] && array[i+1] !== array[i+2]) {
+      clumps += 1;
     }
+    i += 1;
   }
+  return clumps;
 };
+
