@@ -55,6 +55,17 @@ quiz.averageMedian = function (array) {
 //  [1, 2, 1, 1, 1] => true
 //  [2, 1, 1, 2, 1] => false
 //  [3, 4, 1, 2, 3, 1] => true
+quiz.canBalance = function (array) {
+  var i, length, sum;
+  length = array.length;
+  i = 0;
+  sum = 0;
+  for (; i < length; ) {
+    sum = array[i] + sum;
+    i = i + 1;
+  }
+  return sum % 2 === 0;
+};
 
 // Returns the number of times 2 or more of the same number appear sequentially.
 // countClumps(array)
