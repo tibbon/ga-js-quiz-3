@@ -32,6 +32,15 @@ var bigDiff = function(array) {
 //  [2, 6, 9, 11] => 7.5
 //  [9, 8, 2, 4, 7] => 4.67
 
+var averageMedian = function(array) {
+  var mode = array.length % 2
+  if (mode === 0){
+    return (array[array.length / 2] + array[array.length / 2 -1]) / 2;
+  } else {
+    return (array[(array.length - 1) / 2] + array[(array.length - 1) / 2 - 1] +array[(array.length - 1) / 2 + 1]) / 3;
+  };
+}
+
 // return true if you can split the array into parts
 // where the sum of one portion equals the sum of the other portion.
 // canBalance(array)

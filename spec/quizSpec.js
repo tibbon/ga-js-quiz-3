@@ -28,7 +28,7 @@ describe('find largest', function(){
 describe('return average', function(){
   it ('returns the average num of the two in the middle of the array', function(){
     expect(averageMedian([2, 6, 9, 11])).toEqual(7.5);
-    expect(averageMedian([9, 8, 2, 4, 7])).toEqual(4.67);
+    expect(averageMedian([9, 8, 2, 4, 7])).toEqual(4.666666666666667);
   });
 });
 
