@@ -15,7 +15,6 @@ describe('a quiz', function() {
     expect(QUIZ_TOPICS).toContain('jasmine');
     expect(QUIZ_TOPICS).toContain('javascript');
   });
-
 });
 
 describe('#bigDiff', function() {
