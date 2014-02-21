@@ -31,6 +31,23 @@ quiz.bigDiff = function (array) {
 // averageMedian(array)
 //  [2, 6, 9, 11] => 7.5
 //  [9, 8, 2, 4, 7] => 4.67
+quiz.averageMedian = function (array) {
+  var length, start, count, new_array, sum = 0;
+  length = array.length;
+  if (length % 2 === 0) {
+    start = (length / 2) - 1;
+    count = 2;
+  } else {
+    start = Math.floor(length / 2) - 1;
+    count = 3;
+  }
+  new_array = array.splice(start, count);
+  for (var i = 0; i < new_array.length;) {
+    sum = sum + new_array[i];
+    i = i + 1;
+  }
+  return Math.round(sum / count * 100) / 100;
+};
 
 // return true if you can split the array into parts
 // where the sum of one portion equals the sum of the other portion.

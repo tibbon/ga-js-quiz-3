@@ -26,6 +26,15 @@ describe('a quiz', function() {
     });
   });
 
+  describe("#averageMedian", function () {
+    var array, array2;
+    it("return the average of the 2 or 3 numbers in the middle of the array", function(){
+      array = [2, 6, 9, 11];
+      array2 = [9, 8, 2, 4, 7];
+      expect(quiz.averageMedian(array)).toEqual(7.5)
+      expect(quiz.averageMedian(array2)).toEqual(4.67)
+    });
+  });
 });
 
 
