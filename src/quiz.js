@@ -13,6 +13,16 @@ var QUIZ_TOPICS = ['javascript', 'jasmine', 'testing'];
 //  [3, 6, 9, 12] => 3
 //  [9, 20, 11, 12] => 8
 
+
+var bigDiff = function(array) {
+		array = array.sort();,
+		array_diff = array[0] - array[1];
+
+		return array_diff;
+
+};
+
+//initially read the instructions to literally mean find the difference between the two arrays listed--
 var subtract_arrays = function() {
 	var array_1 = [3, 6, 9, 12],
 			sorted_array_1 = array_1.sort();
