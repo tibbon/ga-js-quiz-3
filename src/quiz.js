@@ -66,3 +66,7 @@ var canBalance = function (array) {
 // countClumps(array)
 //  [2, 1, 1, 1, 1, 3, 3, 3, 1] => 2
 //  [9, 3, 3, 4, 4, 4, 6, 7, 7, 7] => 3
+
+var countClumps = function (array){
+  
+}
