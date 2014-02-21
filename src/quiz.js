@@ -78,7 +78,13 @@ var canBalance = function(array){
 
 
 var countClumps = function(array){
-
+	var count = 0;
+	for(var i = 0; i< array.length; i++){
+		if(array[i] === array[i + 1] && array[i] !== array[i - 1]){
+			count += 1;
+		}
+	}
+	return count;
 }
 
 

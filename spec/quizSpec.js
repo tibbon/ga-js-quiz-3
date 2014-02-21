@@ -47,4 +47,11 @@ describe('function3', function() {
 });
 
 
+describe('function4', function() {
 
+  it('is test about the count clump', function() {
+    expect(countClumps([2, 1, 1, 1, 1, 3, 3, 3, 1])).toEqual(2);
+    expect(countClumps([9, 3, 3, 4, 4, 4, 6, 7, 7, 7])).toEqual(3);
+  });
+
+});
