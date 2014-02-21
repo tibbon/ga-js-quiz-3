@@ -29,10 +29,11 @@ quiz.bigDiff = function(array) {
 //  [9, 8, 2, 4, 7] => 4.67
 
 quiz.averageMedian = function(array) {
+  var sorted_array = array.sort();
   if(array.length % 2 === 0) {
-    return (array[array.length / 2] + array[(array.length / 2) - 1]) / 2;
+    return (sorted_array[array.length / 2] + sorted_array[(array.length / 2) + 1]) / 2;
   } else {
-    return (array[(array.length - 1) / 2] + array[((array.length - 1) / 2) - 1] + array[((array.length - 1) / 2) + 1]) / 2;
+    return (sorted_array[(array.length - 1) / 2] + sorted_array[((array.length - 1) / 2) + 1] + sorted_array[((array.length - 1) / 2) + 2]) / 2;
   };
 };
 // return true if you can split the array into parts
