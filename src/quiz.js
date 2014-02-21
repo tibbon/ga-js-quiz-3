@@ -71,3 +71,20 @@ quiz.canBalance = function (array) {
 // countClumps(array)
 //  [2, 1, 1, 1, 1, 3, 3, 3, 1] => 2
 //  [9, 3, 3, 4, 4, 4, 6, 7, 7, 7] => 3
+quiz.countClumps = function (array) {
+  var i, length, num, result;
+  length = array.length;
+  i = 0;
+  result = 0;
+  for (; i < length; ) {
+    num = array.count(array[i]);
+    if ( num > result) {
+      result = num;
+    }
+    i = i + 1;
+  }
+}
+
+
+
+

@@ -47,6 +47,16 @@ describe('a quiz', function() {
       expect(quiz.canBalance(array3)).toEqual(true)
     });
   });
+
+  describe("#countClumps", function () {
+    var array, array2;
+    it("return the average of the 2 or 3 numbers in the middle of the array", function(){
+      array = [2, 1, 1, 1, 1, 3, 3, 3, 1];
+      array2 = [9, 3, 3, 4, 4, 4, 6, 7, 7, 7];
+      expect(quiz.countClumps(array)).toEqual(2)
+      expect(quiz.countClumps(array2)).toEqual(3)
+    });
+  });
 });
 
 
