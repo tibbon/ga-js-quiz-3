@@ -43,7 +43,6 @@ var quiz = {
   //  [2, 1, 1, 2, 1] => false
   //  [3, 4, 1, 2, 3, 1] => true
   canBalance: function(arr) {
-
   },
 
   // Returns the number of times 2 or more of the same number appear sequentially.
@@ -51,19 +50,30 @@ var quiz = {
   //  [2, 1, 1, 1, 1, 3, 3, 3, 1] => 2
   //  [9, 3, 3, 4, 4, 4, 6, 7, 7, 7] => 3
   reportClumps: function(arr) {
-    var len = arr.length,
-        clumps = 0;
-    for(var i=0; i < len; i = i+1) {
-      if (arr[i] === arr[i+1]) {
-        for(var j = i; j < len; j++) {
-          if (arr[j] !== arr[i]) {
-            i = j;
-            clumps = clumps + 1;
-            break;
-          }
-        }
+    var clumps = 0;
+    var first;
+    while (arr.length > 0) {
+      if (arr[0] === arr[1]) {
+        clumps = clumps + 1;
+        do {
+          first = arr.shift();
+        } while (first === arr[0]);
+      } else {
+        arr.shift();
       }
-      return clumps;
     }
+    return clumps;
+      // if (arr[i] === arr[i+1]) {
+      //   for(var j = i; j < len; j++) {
+      //     if (arr[j] === arr[i]) {
+      //       continue;
+      //     } else {
+      //       i = j;
+      //       clumps = clumps + 1;
+      //       break;
+      //     }
+      //   }
+      // }
+      // return clumps;
   }
 };
