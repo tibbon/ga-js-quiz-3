@@ -6,6 +6,7 @@
 //      |__|     |__|  |__| |__| |_______/       |__| |_______/       /__/     \__\     \_____\_____\\______/  |__|  /________(__)
 
 var QUIZ_TOPICS = ['javascript', 'jasmine', 'testing'];
+var quiz = {};
 
 // Find the largest number and second largest number
 // Then subtract the difference.
@@ -13,12 +14,32 @@ var QUIZ_TOPICS = ['javascript', 'jasmine', 'testing'];
 //  [3, 6, 9, 12] => 3
 //  [9, 20, 11, 12] => 8
 
+quiz.bigDiff = function(array) {
+	// array = new Array(a,b,c,d);
+	num1= Math.max.call( Math, array );
+	array2 = delete array[num1];
+	num2 = Math.max.call( Math, array2 );
+	return (num1 - num2);
+};
+
+
+
 // return the average of the 2 or 3 numbers in the middle of the array
 // (2 if the array has an even number of elements)
 // (3 if the array has an odd number of elements).
 // averageMedian(array)
 //  [2, 6, 9, 11] => 7.5
 //  [9, 8, 2, 4, 7] => 4.67
+
+quiz.averageMedian = function(array) {
+	if(array.length % 2 ==== 0){
+
+	} else {
+
+	}
+};
+
+
 
 // return true if you can split the array into parts
 // where the sum of one portion equals the sum of the other portion.
