@@ -48,17 +48,17 @@ var averageMedian = function(array){
 
 var canBalance = function(array){
 	var count=0;
-   for (var i=array.length; i--;) {
-     count+=array[i];
+   for(var k = 0; k < array.length; k++) {
+     count+=array[k];
    }
 
 	for(var i = 0; i < array.length; i++){
-		var p1 = array.slice(0,i);
+		var p1 = array.slice(0 , i);
 		var count2 = 0;
-		for (var j=p1.length; i--;) {
-     count2+=array[j];
-   }
-		if(count2 === count - count2){
+		for (var j = 0; j < p1.length; j++) {
+     count2 += array[j];
+   	}
+		if(count2 === (count - count2)){
 			return true;
 		}else {
 			return false;
