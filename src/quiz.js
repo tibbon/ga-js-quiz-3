@@ -85,9 +85,9 @@ quiz.canBalance = function(array) {
 quiz.countClumps = function(array) {
 	var count = 0;
 	for (var i = 1, l = array.length; i < l; i = i + 1) {
-		if ((parseInt(array[i]) === parseInt(array[i-1])) && (i === 1)) {
+		if ((array[i] === array[i-1]) && (i === 1)) {
 			count = count + 1;
-		} else if ((parseInt(array[i]) === parseInt(array[i-1])) && (array[i] !== array[i-2])){
+		} else if ((array[i] === array[i-1]) && (array[i] !== array[i-2])){
 			count = count + 1;
 		}
 	}
