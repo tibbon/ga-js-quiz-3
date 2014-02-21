@@ -16,4 +16,12 @@ describe('a quiz', function() {
     expect(QUIZ_TOPICS).toContain('javascript');
   });
 
+describe('subtract arrays', function() {
+
+  it('returns the difference between the the first and second largest number in an array', function() {
+    expect(diff_array_1).toEqual('2');
+    expect(diff_array_2).toEqual('8');
+  });
+
+
 });
