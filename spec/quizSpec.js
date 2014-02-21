@@ -31,7 +31,7 @@ describe('function2', function() {
 
   it('is test about the middle of array avg', function() {
     expect(averageMedian([2, 6, 9, 11])).toEqual(7.5);
-   expect(averageMedian([9, 8, 2, 4, 7])).toEqual(4.67);
+    expect(averageMedian([9, 8, 2, 4, 7])).toEqual(4.67);
   });
 
 });
@@ -41,7 +41,7 @@ describe('function3', function() {
 
   it('is test about the balance of array', function() {
     expect(canBalance([1, 2, 1, 1, 1])).toEqual(true);
-   expect(canBalance([2, 1, 1, 2, 1])).toEqual(false);
+    expect(canBalance([2, 1, 1, 2, 1])).toEqual(false);
   });
 
 });

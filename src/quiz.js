@@ -48,22 +48,27 @@ var averageMedian = function(array){
 
 var canBalance = function(array){
 	var count=0;
+	var bool;
    for(var k = 0; k < array.length; k++) {
-     count+=array[k];
+     count += array[k];
    }
 
-	for(var i = 0; i < array.length; i++){
+	for(var i = 0; i <= array.length; i++){
 		var p1 = array.slice(0 , i);
 		var count2 = 0;
+
 		for (var j = 0; j < p1.length; j++) {
      count2 += array[j];
    	}
+
 		if(count2 === (count - count2)){
-			return true;
+			bool = true;
+			break;
 		}else {
-			return false;
+			bool = false;
 		}
 	}
+	return bool;
 }
 
 // Returns the number of times 2 or more of the same number appear sequentially.
