@@ -13,6 +13,27 @@ var QUIZ_TOPICS = ['javascript', 'jasmine', 'testing'];
 //  [3, 6, 9, 12] => 3
 //  [9, 20, 11, 12] => 8
 
+var array = [3, 6, 9, 12], largest, second_largest, bigDiff;
+
+// for (i = 0; i < array.length; i = i + 1) {
+//     if (array[i] > largest) {
+//         largest = array[i];
+//     }
+// }
+
+var largest = function largest(array) {array.sort(function(a, b){
+  return b - a; })[0];
+return largest;}
+
+var second_largest = function second_largest(array) {array.sort(function(a, b){
+  return b - a; })[1];
+return second_largest;}
+
+var bigDiff = function bigDiff(largest, second_largest) {
+  return largest - second_largest
+}
+
+
 // return the average of the 2 or 3 numbers in the middle of the array
 // (2 if the array has an even number of elements)
 // (3 if the array has an odd number of elements).
