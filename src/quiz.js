@@ -13,6 +13,18 @@ var QUIZ_TOPICS = ['javascript', 'jasmine', 'testing'];
 //  [3, 6, 9, 12] => 3
 //  [9, 20, 11, 12] => 8
 
+var bigDiff = function(array) {
+  var a = array,
+      i = 0,
+      b = 0;
+  for (i; i < a.length;){
+    if (a[i] > b){
+      b = a[i];
+    }
+    i = i + 1;
+  }
+}
+
 // return the average of the 2 or 3 numbers in the middle of the array
 // (2 if the array has an even number of elements)
 // (3 if the array has an odd number of elements).
