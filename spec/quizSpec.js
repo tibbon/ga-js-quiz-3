@@ -28,7 +28,9 @@ describe('a quiz', function() {
     expect(QUIZ_TOPICS).toContain('javascript');
   });
 
-  it('finds the largest and second largest numbers in an array and find the difference', function(){});
+  it('finds the largest and second largest numbers in an array and find the difference', function(){
+    expect()
+  });
 
   it('returns the average of the middle 2 numbers in an array with an even number of elements', function(){});
 
