@@ -17,3 +17,21 @@ describe('a quiz', function() {
   });
 
 });
+
+describe('#bigDiff', function() {
+  it('finds the largest and second largest numbers in an array and finds the difference', function() {
+    var array_1 = [3, 6, 9, 12],
+    array_2 = [10, 20, 4, 3];
+    expect(quiz.bigDiff(array_1)).toEqual(3);
+    expect(quiz.bigDiff(array_2)).toEqual(10);
+  });
+});
+
+describe('#averageMedian', function() {
+  it('finds the average of the middle numbers of an array', function() {
+    var array_1 = [2, 6, 9, 11],
+    array_2 = [9, 8, 2, 4, 7];
+    expect(quiz.averageMedian(array_1)).toEqual(7.5);
+    expect(quiz.averageMedian(array_2)).toEqual(4.67);
+  });
+});
