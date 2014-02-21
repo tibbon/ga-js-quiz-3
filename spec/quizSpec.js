@@ -15,5 +15,11 @@ describe('a quiz', function() {
     expect(QUIZ_TOPICS).toContain('jasmine');
     expect(QUIZ_TOPICS).toContain('javascript');
   });
+});
 
+describe('question1', function() {
+  it('can find largest number and second largest number and subtract the difference', function() {
+    expect(bigdiff[3, 6, 9, 12]).toEqual(3);
+    expect(bigdiff[9, 20, 11, 12]).toEqual(8);
+  });
 });
