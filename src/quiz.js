@@ -39,7 +39,7 @@ quiz.averageMedian = function(array){
 		sum = sum + array[i];
 		i = i + 1;
 	};
-	return parseFloat(sum/length).toFixed(2);
+	return sum/length;
 
 };
 
@@ -51,7 +51,8 @@ quiz.averageMedian = function(array){
 //  [3, 4, 1, 2, 3, 1] => true
 
 
-quiz.canBalance = function(){
+quiz.canBalance = function(array){
+
 
 };
 

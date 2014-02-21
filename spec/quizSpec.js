@@ -49,8 +49,7 @@ describe('#quiz.averageMedian', function(){
 		array2 = [9, 8, 2, 4, 7];
 		expect(quiz.averageMedian(array)).toEqual(7.5);
 		expect(quiz.averageMedian(array2)).toEqual(4.67);
-	})
-
+	});
 
 });
 
@@ -69,9 +68,11 @@ describe('#quiz.canBalance', function(){
 	array2 = [2, 1, 1, 2, 1];
 	array3 = [3, 4, 1, 2, 3, 1];
 
-	expect()
-
-
+	it('should return true if an array can be separated into 2 parts with equal sums', function(){
+		expect(quiz.canBalance(array)).toEqual(true);
+		expect(quiz.canBalance(array2)).toEqual(false);
+		expect(quiz.canBalance(array3)).toEqual(true);
+	});
 
 })
 
