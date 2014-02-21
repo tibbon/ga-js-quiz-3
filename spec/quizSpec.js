@@ -16,4 +16,23 @@ describe('a quiz', function() {
     expect(QUIZ_TOPICS).toContain('javascript');
   });
 
+  describe("#bigDiff", function () {
+    var array, array2;
+    it("finds the largest number and second largest number, subtracting diff", function(){
+      array = [3, 6, 9, 12];
+      array2 = [9, 20, 11, 12];
+      expect(quiz.bigDiff(array)).toEqual(3)
+      expect(quiz.bigDiff(array2)).toEqual(8)
+    });
+  });
+
 });
+
+
+
+
+
+
+
+
+

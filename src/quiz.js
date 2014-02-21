@@ -7,11 +7,23 @@
 
 var QUIZ_TOPICS = ['javascript', 'jasmine', 'testing'];
 
+var quiz = {};
 // Find the largest number and second largest number
 // Then subtract the difference.
 // bigDiff(array)
 //  [3, 6, 9, 12] => 3
 //  [9, 20, 11, 12] => 8
+quiz.bigDiff = function (array) {
+  array = array.sort(function(a, b){
+    if (a < b)
+      return 1;
+    if (a > b)
+      return -1;
+    // a must be equal to b
+    return 0;
+  });
+  return array.shift() - array.shift();
+};
 
 // return the average of the 2 or 3 numbers in the middle of the array
 // (2 if the array has an even number of elements)
