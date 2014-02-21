@@ -55,4 +55,11 @@ describe('a quiz', function() {
   	});
   });
 
+  describe('question4', function() {
+  	it ('returns the number of repeated value counts', function() {
+  		expect(quiz.countClumps([2, 1, 1, 1, 1, 3, 3, 3, 1])).toEqual(2);
+  		expect(quiz.countClumps([9, 3, 3, 4, 4, 4, 6, 7, 7, 7])).toEqual(3);
+  	});
+  });
+
 });
