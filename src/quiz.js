@@ -12,6 +12,14 @@ var QUIZ_TOPICS = ['javascript', 'jasmine', 'testing'];
 // bigDiff(array)
 //  [3, 6, 9, 12] => 3
 //  [9, 20, 11, 12] => 8
+var quiz = {};
+
+quiz.bigDiff = function(array) {
+  var sorted_array = array.sort(),
+  largest = sorted_array[sorted_array.length - 1],
+  second_largest = sorted_array[sorted_array.length - 2];
+  return largest - second_largest;
+};
 
 // return the average of the 2 or 3 numbers in the middle of the array
 // (2 if the array has an even number of elements)
@@ -20,6 +28,14 @@ var QUIZ_TOPICS = ['javascript', 'jasmine', 'testing'];
 //  [2, 6, 9, 11] => 7.5
 //  [9, 8, 2, 4, 7] => 4.67
 
+quiz.averageMedian = function(array) {
+  var sorted_array = array.sort();
+  if(array.length % 2 === 0) {
+    return (sorted_array[array.length / 2] + sorted_array[(array.length / 2) + 1]) / 2;
+  } else {
+    return (sorted_array[(array.length - 1) / 2] + sorted_array[((array.length - 1) / 2) + 1] + sorted_array[((array.length - 1) / 2) + 2]) / 2;
+  };
+};
 // return true if you can split the array into parts
 // where the sum of one portion equals the sum of the other portion.
 // canBalance(array)
