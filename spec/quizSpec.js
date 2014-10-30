@@ -20,7 +20,7 @@ describe('a quiz', function() {
 
 describe('bigDiff', function() {
 
-  it('finds the difference between the smallest and largest number', function() {
+  it('finds the difference between the largest and second largest number', function() {
     expect(quiz.bigDiff([3, 6, 9, 12])).toEqual(3);
     expect(quiz.bigDiff([9, 20, 11, 12])).toEqual(8);
   });
@@ -30,8 +30,8 @@ describe('bigDiff', function() {
 describe('averageMedian', function() {
 
   it('return the average of the 2 (if even) or 3 (if odd) middle numbers', function() {
-    expect(quiz.averageMedian([2, 6, 9, 11])).toEqual(7.5);
-    expect(quiz.averageMedian([9, 8, 2, 4, 7])).toEqual(4.67);
+    expect(quiz.averageMedian([2, 6, 9, 11])).toBeCloseTo(7.5, 2);
+    expect(quiz.averageMedian([9, 8, 2, 4, 7])).toBeCloseTo(4.67, 2);
   });
 
 });
