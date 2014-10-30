@@ -7,6 +7,8 @@
 
 var QUIZ_TOPICS = ['javascript', 'jasmine', 'testing'];
 
+var quiz = {}; // namespacing
+
 // Find the largest number and second largest number
 // Then subtract the difference.
 // bigDiff(array)
