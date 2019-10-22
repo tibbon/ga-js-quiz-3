@@ -6,7 +6,7 @@ GEM
     childprocess (0.3.6)
       ffi (~> 1.0, >= 1.0.6)
     coderay (1.0.8)
-    ffi (1.1.5)
+    ffi (1.11.1)
     libwebsocket (0.1.5)
       addressable
     method_source (0.8.1)
